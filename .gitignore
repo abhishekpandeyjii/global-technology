@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 scratch
-*.png
 
 # Editor directories and files
 .vscode/*
