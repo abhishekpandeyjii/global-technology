@@ -1,0 +1,116 @@
+.team-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.team-card-image {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  background: #f8fafc;
+}
+
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+  transform-origin: top center;
+}
+
+.team-card:hover .team-card-image img {
+  transform: scale(1.06);
+}
+
+/* Social Links */
+.team-card-socials {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.team-card:hover .team-card-socials {
+  transform: translateY(0);
+}
+
+.team-social-link {
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.team-social-link:hover {
+  background: var(--white);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Info */
+.team-card-info {
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-card-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.team-card-name {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.team-card-designation {
+  font-size: var(--text-sm);
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.team-card-bio {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.6;
+}

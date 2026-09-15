@@ -1,0 +1,248 @@
+/* ========================================
+   GLOBAL GEOTECH - Global Design System
+   ======================================== */
+
+/* CSS Custom Properties / Design Tokens */
+:root {
+  /* Primary Brand Colors (from Official Logo) */
+  --primary: #019DDA;
+  --primary-dark: #007BB5;
+  --primary-light: #38BDF8;
+  --primary-rgb: 1, 157, 218;
+
+  /* Secondary Deep Ocean & Slate Colors */
+  --secondary: #0A192F;
+  --secondary-light: #132742;
+  --secondary-lighter: #1E3A5F;
+
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --gray-50: #F8FAFC;
+  --gray-100: #F0F4F8;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0A192F;
+  --black: #000000;
+
+  /* Typography */
+  --font-heading: 'Manrope', 'Poppins', sans-serif;
+  --font-body: 'Rubik', 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-width: 1200px;
+  --container-padding: 0 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   CSS Reset & Base Styles
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--gray-700);
+  background-color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* ========================================
+   Layout Utilities
+   ======================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* ========================================
+   Scroll Animations
+   ======================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+    --text-6xl: 2.5rem;
+    --text-5xl: 2rem;
+    --text-4xl: 1.75rem;
+    --text-3xl: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 50px 0;
+    --text-6xl: 2rem;
+    --text-5xl: 1.75rem;
+    --text-4xl: 1.5rem;
+  }
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: var(--white);
+}

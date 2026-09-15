@@ -1,0 +1,22 @@
+.services {
+  padding: var(--section-padding);
+  background: var(--gray-50);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

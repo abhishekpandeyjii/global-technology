@@ -1,0 +1,27 @@
+.team {
+  padding: var(--section-padding);
+  background: var(--white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
+  justify-content: center;
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(280px, 380px));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 25px;
+  }
+}

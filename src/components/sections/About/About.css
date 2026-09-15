@@ -1,0 +1,161 @@
+.about {
+  padding: var(--section-padding);
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* About Image */
+.about-image-wrapper {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  z-index: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-image-accent {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 180px;
+  height: 180px;
+  border: 4px solid var(--primary);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+.about-experience-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 150px;
+  height: 150px;
+  background: var(--primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(var(--primary-rgb), 0.4);
+  z-index: 2;
+}
+
+.about-exp-number {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.about-exp-text {
+  font-size: var(--text-sm);
+  color: var(--white);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* About Content */
+.about-content {
+  padding-left: 20px;
+}
+
+.about-text {
+  font-size: var(--text-base);
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+.about-feature-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: rgba(var(--primary-rgb), 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-image img {
+    height: 400px;
+  }
+
+  .about-content {
+    padding-left: 0;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-accent {
+    display: none;
+  }
+
+  .about-experience-badge {
+    bottom: -15px;
+    right: 15px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-exp-number {
+    font-size: var(--text-3xl);
+  }
+}
